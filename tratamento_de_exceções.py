@@ -13,3 +13,4 @@ except ValueError:
 except:
     # Tratamento de exceção genérico para qualquer outro tipo de exceção
     print("Ocorreu um erro")
+# o bloco de código pode ter varios except

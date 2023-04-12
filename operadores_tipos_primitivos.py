@@ -83,3 +83,12 @@ print(ver > 18 or fg) # or retorna True se 1 dos valores for verdadeiro
 kj = 18
 pr = False
 print(not(kj > 18 or pr))
+
+# operadores de indentidade ( a utilidade dos operadores de identidade é verificar se dois objetos são exatamente o mesmo objeto, enquanto a utilidade dos operadores de igualdade é verificar se dois objetos têm o mesmo valor, independentemente de sua identidade. )
+x = "hello"
+y = "hello"
+z = x
+print(x is y)  # False, porque x e y são objetos diferentes na memória, mesmo contendo o mesmo valor "hello"
+print(x is z)  # True, porque x e z são o mesmo objeto na memória
+print(x is not y)  # True, porque x e y não são o mesmo objeto na memória
+

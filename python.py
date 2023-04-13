@@ -24,30 +24,19 @@ print(q, s, z)
 
 
 # complex (tipo coomplexo)
-
 de = 3j
-
 print(de)
 
 # tem o tipo especial que não tem nenhum valor o NoneType
-
 q = None
 
 # existe uma função que diz qual é o tipo de dado type()
-
 print(type(q))
 
 # atribuição multipla
-
 name, surname, alias, age = "Brais", "Moure", 'MoureDev', 35
-
 print("Me llamo:", name, surname, ". Mi edad es:", age, ". Y mi alias es:", alias)
 
-#
-
-#
-
-#
 
 # operadores dos tipos primitivos de dados
 

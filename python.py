@@ -312,90 +312,49 @@ except ValueError:
 except:
     # Tratamento de exceção genérico para qualquer outro tipo de exceção
     print("Ocorreu um erro")
-# pode criar vários except
+# pode criar vários except no tratamento de exceções
 
 
-# Estruturas Condicionais ( if elif else ) Instrução Condicional if – elif – else
-
+# Estruturas Condicionais ( estruturas de controle de fluxo em Python if elif else ) Instrução Condicional if – elif – else
 idade = 22
-
-if idade < 12: # se essa expressão for True
-
- faixa_etaria = 'Criança' # executa esse código se for False ele pula esse código
-
-elif idade < 18: # se essa expressão for True
-
+if idade < 12: # se essa condição for True
+ faixa_etaria = 'Criança' # executa esse código se a condição for False ele pula esse código
+elif idade < 18: # se essa condição for True
  faixa_etaria = 'Adolescente' # executar esse código se for False ele pula esse código
-
 elif idade < 60: # elif pode ser usado várias vezes
-
  faixa_etaria = 'Adulto'
-
 else: # essa condição é executada se as duas condições if elif retorna False
-
  faixa_etaria = 'Idoso'
-
 print('Faixa Etária: ', faixa_etaria)
 
-#
 
-#
-
-#
-
-# Estrutura de repetição while ( while é uma Estrutura de repetição que executa um determinado bloco de código enquanto a condição for True)
-
+# Estrutura de repetição while ( while é uma Estrutura de repetição que executa um determinado bloco de código enquanto a condição for True )
 # exemplo com n = 15
-
 n = 15
-
 soma = 0
-
 contador = 0
-
 while contador <= n:
-
  soma = soma + contador
-
  contador = contador + 1
-
 print(f'A soma dos primeiros {n} inteiros é {soma}')
-
-# exemplo com n = 15
-
+# exemplo sem a variavel contador
 n = 15
-
 soma = 0
-
-while n >= 0:
-
+while n >= 0: # condição n é maior ou igual a 0
  soma = soma + n
-
  n = n - 1
-
 print(f'A soma dos primeiros inteiros é {soma}')
 
-#
 
-#
-
-#
-
-# Estrutura de repetição for in ( ela pecorre uma sequência interavel ) ( sequência  interavel são listas, tuplas, conjuntos e strings)
-
+# Estrutura de repetição for in ( ela pecorre uma sequência interavel ) ( sequência  interavel são listas, tuplas, conjuntos e strings )
 # exemplo a palavra araranguara
-
 a = 'araraguara'
-
 contador = 0
-
 for num in a:
-
     if num == 'a':
-
         contador += 1
-
 print(f'a palavra {a} tem {contador} letras "a"')
+
 
 # a função range() é usado para cria uma sequencia de números ( ele sempre começa com 0 e o valor de fim não é incluído na sequência resultante)
 

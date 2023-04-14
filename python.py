@@ -258,132 +258,62 @@ i = int(s)
 print(i) # saída: 123
 
 # Conversão de string para float
-
 s = '3.14'
-
 f = float(s)
-
 print(f) # saída: 3.14
 
 # Conversão de string para bool
-
 s = ''
-
 b = bool(s)
-
 print(b) # saída: False
 
 # conversão para o tipo NoneType não existe ( unico jeito é atribuir as variaveis ao valor None )
-
 x = 10
-
 print('Valor:', x, '--', type(x))
 
 # atribuição do valor None à variável x
-
 x = None
-
 print('Valor:', x, '--', type(x))
 
 # a conversão do valor None para outros tipos é possível apenas para os tipos str e bool
-
 print(str(None)) # 'None'
-
 print(bool(None)) # sempre retornara False
 
-#
-
-#
-
-#
 
 # Formatação de Str ( str literais formatadas ) f-str
-
 nascimento = 1986
-
 ano_atual = 2022
-
-idade = ano_atual - nascimento
-
-print(f'Eu tenho {idade} anos')
-
-# é possível simplifica o código acima
-
-nascimento = 1986
-
-ano_atual = 2022
-
-print(f'Eu tenho {ano_atual - nascimento} anos')
+print(f'Eu tenho {ano_atual - nascimento} anos') # é possível usa operadores aritméticos no f-str
 
 # também é possível usa metodos e funções no f-str
-
 print(f'exemplo de f-str com um valor de 10 é uma expressão {10 == 15}')
-
 palavra = 'consolação'
-
 print(f'A palavra {palavra.upper()} possuí {len(palavra)} letras')
 
-# formatação
-
+# formatação com numeros float
 orcamento = 7000
-
 vlr_gasto = 430
-
-pct = (vlr_gasto/orcamento) * 100 # multiplicado por 100 para resultado em porcentagem
-
-print(f'Porcentagem já gasta do orçamento: {pct:.2f}%') #(.2f f nesse caso serve para indicar que o valor será formatado como float com duas casas decimais, sera arredondado. ( para baixo nesse caso ))
-
-# outra formatação para arredondar o numero
-
-orcamento = 7000
-
-vlr_gasto = 430
-
 pct = (vlr_gasto/orcamento)
-
 print(f'Porcentagem já gasta do orçamento: {pct:.2%}') # com o símbolo de porcentagem ( % ) permite declarar que o valor é uma porcentagem, assim não é necessário multiplica por 100
 
-#
 
-#
-
-#
-
-#Tratamento de exceções
-
+# Tratamento de exceções
 try:
-
     # Código que pode levantar exceções
-
     x = int(input("Digite um número: "))
-
     y = 10 / x
-
     print(y)
-
 except ZeroDivisionError:
-
     # Tratamento de exceção quando há uma divisão por zero
-
     print("Não é possível dividir por zero")
-
 except ValueError:
-
     # Tratamento de exceção quando o usuário não digita um número válido
-
     print("Por favor, digite um número válido")
-
 except:
-
     # Tratamento de exceção genérico para qualquer outro tipo de exceção
-
     print("Ocorreu um erro")
+# pode criar vários except
 
-#
-
-#
-
-#
 
 # Estruturas Condicionais ( if elif else ) Instrução Condicional if – elif – else
 

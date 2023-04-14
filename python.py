@@ -124,14 +124,6 @@ kj = 18
 pr = False
 print(not(kj > 18 or pr))
 
-# operadores de indentidade ( a utilidade dos operadores de identidade é verificar se dois objetos são exatamente o mesmo objeto, enquanto a utilidade dos operadores de igualdade é verificar se dois objetos têm o mesmo valor, independentemente de sua identidade. )
-x = "hello"
-y = "hello"
-z = x
-print(x is y)  # False, porque x e y são objetos diferentes na memória, mesmo contendo o mesmo valor "hello"
-print(x is z)  # True, porque x e z são o mesmo objeto na memória
-print(x is not y)  # True, porque x e y não são o mesmo objeto na memória
-
 # operações com str | operador de acesso é entre [colchetes] e o índice positivo sempre começa pelo zero e o índice negativo começa pelo -1 ( o espaço também conta como caractere )
 # indices positivo
 qpw = 'consolação'
@@ -172,6 +164,14 @@ print(s1 in s2) # False
 print(s2 in s1) # True
 print('sola' in s1) # True
 print('sola' not in s2) # False
+
+# operadores de indentidade ( a utilidade dos operadores de identidade é verificar se dois objetos são exatamente o mesmo objeto, enquanto a utilidade dos operadores de igualdade é verificar se dois objetos têm o mesmo valor, independentemente de sua identidade. )
+x = "hello"
+y = "hello"
+z = x
+print(x is y)  # False, porque x e y são objetos diferentes na memória, mesmo contendo o mesmo valor "hello"
+print(x is z)  # True, porque x e z são o mesmo objeto na memória
+print(x is not y)  # True, porque x e y não são o mesmo objeto na memória
 
 # Metodos para Str ( Manipulação de Str )
 palavra = 'consolação'
@@ -312,10 +312,19 @@ except ValueError:
 except:
     # Tratamento de exceção genérico para qualquer outro tipo de exceção
     print("Ocorreu um erro")
-# pode criar vários except no tratamento de exceções
+# o bloco de código tratamento de exceções pode ter vários except
 
 
-# Estruturas Condicionais ( estruturas de controle de fluxo em Python if elif else ) Instrução Condicional if – elif – else
+# Estruturas Condicionais ( estruturas de controle de fluxo em Python ) Instrução Condicional if – elif – else
+# essas condicionais serve para executar um determinado bloco de código se a condição for verdadeira
+# if - else
+# Exemplo em que a condição é verdadeira
+idade = 35
+if idade >= 18:  # condição da condicional if
+ print('Idade suficiente para CNH!')
+else: # se a condição do if for False executa o else
+ print('Idade não suficiente para CNH!')
+# if - elif - else
 idade = 22
 if idade < 12: # se essa condição for True
  faixa_etaria = 'Criança' # executa esse código se a condição for False ele pula esse código
@@ -356,70 +365,29 @@ for num in a:
 print(f'a palavra {a} tem {contador} letras "a"')
 
 
-# a função range() é usado para cria uma sequencia de números ( ele sempre começa com 0 e o valor de fim não é incluído na sequência resultante)
-
+# a função range() é usado para cria uma sequencia de números ( ele sempre começa com 0 e o valor de fim não é incluído na sequência resultante )
    # range(stop): cria uma sequência de números que vão de 0 até stop-1. range(12) começa com 0 e vai até o 11
-
    # range(start, stop): cria uma sequência de números que vão de start até stop-1. range(1, 10) começa no 1 e vai até 9
-
    # range(start, stop, step): cria uma sequência de números que vão de start até stop-1, pulando de step em step. range(0, 11, 2) começa no 0 até o 10 pulando de 1 em 1
-
 # exemplo com n = 15
-
 n = 15
-
 soma = 0
-
 for num in range(n + 1): # n + 1 é o intervalo
-
  soma = soma + num
-
 print(f'A soma dos primeiros {n} inteiros é {soma}')
 
-#
 
-#
-
-#
-
-# Interrupção da Estruturas de Repetição ( existe o comando break, que encerra a instrução de repetição ao verificar se uma condição específica é verdadeira. if-else)
-
+# Interrupção da Estruturas de Repetição ( existe o comando break, que encerra a instrução de repetição ao verificar se uma condição específica é verdadeira. if-else )
 for num in range(250, 301):
-
-	if num % 21 == 0:		print(f'o divisor de 21 é {num}')
-
-		break
+    if num % 21 == 0:	
+      print(f'o divisor de 21 é {num})
+      break
 
 # também é possível fazer com o while
-
-while True: # True faz a repetição nunca parar
-
+contador = 0
+while True: # True faz a repetição nunca parar se não tiver o break no final
     print(contador)
-
     contador += 1
-
     if contador >= 10:
-
         print("Contador chegou a 10, interrompendo a execução.")
-
         break
-
-#
-
-#
-
-#
-
-# operadores de identidade ( endereço de memória ) ( is is not verifica se as variáveis tem valores unicos dos objetos )
-
-a = [1, 2, 3]
-
-b = [1, 2, 3]
-
-print(a is b)  # False
-
-c = a
-
-print(a is c) # True
-
-print(b is not a)

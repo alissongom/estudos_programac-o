@@ -22,7 +22,6 @@ z = '''\te existe str com aspas triplas que serve para coloca 'aspas simples' e 
 da para fazer multi quebras de linhas e multi    espaços''' # a função \t adiciona um espaço horizontal
 print(q, s, z)
 
-
 # complex (tipo coomplexo)
 de = 3j
 print(de)
@@ -140,10 +139,10 @@ print('pega a letra L da str: ',qpw[-5]) # l
 print('inverte a str: ',qpw[::-1])
 
 # também é possível fazer uma sub-str que é uma str feita pela str original
-print(qpw[3:6]) #palavra sol
-print(qpw[-4:]) #palavra ação
-print(qpw[3:7]) #palavra sola
-print(qpw[:7]) #palavra consola
+print(qpw[3:6]) # palavra sol
+print(qpw[-4:]) # palavra ação
+print(qpw[3:7]) # palavra sola
+print(qpw[:7]) # palavra consola
 
 # operadores de string ( * repete a str N vezes ) ( + Concatena (une) duas strings em uma única str )
 jk = 'belo'

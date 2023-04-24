@@ -343,15 +343,15 @@ n = 15
 soma = 0
 contador = 0
 while contador <= n:
- soma = soma + contador
+ soma += contador
  contador = contador + 1
 print(f'A soma dos primeiros {n} inteiros é {soma}')
 # exemplo sem a variavel contador
 n = 15
 soma = 0
 while n >= 0: # condição n é maior ou igual a 0
- soma = soma + n
- n = n - 1
+ soma += n
+ n -= 1
 print(f'A soma dos primeiros inteiros é {soma}')
 
 
@@ -380,7 +380,7 @@ print(f'A soma dos primeiros {n} inteiros é {soma}')
 # Interrupção da Estruturas de Repetição ( existe o comando break, que encerra a instrução de repetição ao verificar se uma condição específica é verdadeira. if-else )
 for num in range(250, 301):
     if num % 21 == 0:	
-      print(f'o divisor de 21 é {num})
+      print(f'o divisor de 21 é {num}')
       break
 
 # também é possível fazer com o while
@@ -391,3 +391,520 @@ while True: # True faz a repetição nunca parar se não tiver o break no final
     if contador >= 10:
         print("Contador chegou a 10, interrompendo a execução.")
         break
+
+
+# Estrutura de dados em python ( tipos não primitivo de dados ) ( as estruturas de dados em Python permitem armazenar e manipular diferentes tipos de dados de forma mais eficiente e conveniente Ao usar essas estruturas de dados, os programadores podem escrever código mais eficiente e legível, facilitando a manipulação dos dados em seus programas. )
+# Listas [list] Tuplas (tuple) Conjuntos {set} Dicionário {dict}
+# Criação de Listas e Acesso dos Elementos ( existe list homogênea os elementos são do mesmo tipo ) ( existe list heterogêneo os elementos são diferentes tipos )
+s = [2, 'a', 5.44, True] # lista com valores heterogêneo
+print(s)
+c = ['um', 'dois', None, 4] # lista com valor nulo dentro
+print(c)
+l = [0, 1] # listas com outras listas dentro (listas aninhadas)
+l = [l, 'dois', 'três', [4, 5], 'seis']
+print(l)
+i = [] # lista vazia
+print(i)
+
+# para acessar um elemento da lista usa operador ([]) colocando o índice ( é possível utilizar indice negativo ) ( e fazer slicing que é uma sub-list)
+lista = [2, 'a', 5.44, True, None, 'casa']
+
+# acesso por índices
+
+print(lista[0])
+
+print(lista[3])
+
+print(lista[-1])
+
+# acesso por slices
+
+print(lista[1:4])
+
+print(lista[-2:])
+
+print(lista[:])
+
+# encontrar o maior idade entre um grupo de três pessoas
+
+idades = [27, 49, 12, 67, 21, 32, 18, 45, 84, 53, 22, 56, 80, 35, 18]
+
+maior_idade = idades[0] # assume que a primeira idade é maior
+
+for idade in idades: # percorrer a cada elemento da list
+
+ if idade > maior_idade:
+
+     maior_idade = idade
+
+print(f'a maior idade da list é {maior_idade}')
+
+# manipulação de list 
+
+list = [2, 'a', 'b', 'c', 5.44, True]
+
+print(list)
+
+list.append(999) # método append adiciona um novo elemento na list
+
+print(list)
+
+# Altera o valor do quarto e o do último elemento
+
+list[3] = 'a'
+
+list[-1] = list[-1] + 1
+
+print(list)
+
+list.remove('a') # remove a primeira elemento 'a' que tiver na list ( pode dar erro se o elemento não existir )
+
+print(list)
+
+# dá para usa operadores de cocatenação (+), repetição (*) e de filiação (in) com as listas. Também podemos utilizar funções e métodos. igual na str
+
+l1 = [30, 10, 20]
+
+l2 = [2, 'a', 5.44, True]
+
+# Operações de concatenação (+), repetição (*) e filiação (in)
+
+print(l1 + l2)
+
+print(l1 * 3)
+
+print(10 in l1)
+
+# Funções úteis
+
+print(len(l2)) # len: retorna a quantidade de elementos da lista.
+
+print(sum(l1)) # sum: retorna a soma dos elementos de uma lista. ( só funciona com list int )
+
+print(max(l1)) # max: retorna o maior elemento da lista ( só funciona com list int )
+
+print(min(l1)) # retorna o menor valor da list ( so funciona com list int )
+
+# Métodos que alteram os valores internos da lista
+
+l2.reverse() # reverse: inverte a ordem dos elementos
+
+print(l2)
+
+l1.extend([10, 20, 30, 40, 10]) # extend: adiciona elementos de outra sequência
+
+print(l1)
+
+l1.sort() # sort: ordena os valores da lista ( dá erro se coloca int com str ) ( mais funciona com list str )
+
+print(l1)
+
+l2.insert(2, 'novo valor') # insert: adiciona um elemento em um índice especifico
+
+print(l2)
+
+l2.pop() # pop: remove o último elemento da lista
+
+print(l2)
+
+l2.clear() # clear: limpa a lista, removendo todos os elementos
+
+print(l2)
+
+# Métodos que retornam valores e não alteram a lista
+
+print(l1.index(40)) # index: retorna o índice do elemento list
+
+print(l1.count(10)) # count: conta quantas elementos 10 tem na list
+
+# da para usar o metodo max() para encontrar a maior idade de um grupo de pessoas
+
+idades = [27, 49, 12, 67, 21, 32, 18, 45, 84, 53, 22, 56, 80, 35, 18]
+
+print('Maior idade:', max(idades))
+
+# tuplas ( tuplas são iguais a list mais são ordenando e imutaveis não é possível muda os valor e nem adicionar )
+
+# Criação de uma tupla homogênea
+
+tupla = (0, 1, 3, 4)
+
+print(tupla)
+
+# Tupla heterogênea
+
+tupla2 = (2, 'a', 5.44, True, None)
+
+print(tupla2)
+
+# Tupla vazia
+
+tupla3 = ()
+
+print(tupla3)
+
+# acesso por índices
+
+print(tupla[0])
+
+print(tupla[3])
+
+print(tupla[-1])
+
+# acesso por slices
+
+print(tupla2[1:4])
+
+print(tupla2[-2:])
+
+print(tupla2[:])
+
+# métodos para tuplas
+
+t1 = (30, 10, 20)
+
+t2 = (2, 'a', 5.44, True)
+
+# Operações de concatenação (+), repetição (*) e filiação (in)
+
+print(t1 + t2)
+
+print(t1 * 3)
+
+print(10 in t1)
+
+# Funções úteis
+
+print(len(t2)) # len: retorna a quantidade de elementos da tupla
+
+print(min(t1)) # min: retorna o menor elemento da tupla
+
+print(max(t1)) # max: retorna o maior elemento da tupla
+
+print(sum(t1)) # sum: retorna a soma dos elementos da tupla
+
+# Métodos que retornam valores
+
+print(t1.index(20)) # index: retorna o índice da primeira ocorrência do elemento
+
+print(t2.count('a')) # count: conta as ocorrências do elemento
+
+# sets ( o tipo sets é não-ordenadas que representam uma coleção de itens unicos sem repetições e também é mutavel )
+
+# o tipo sets suporta operações matemáticas entre conjuntos como união, interseção e diferença.
+
+# Criação de um conjunto homogêneo
+
+c1 = {3, 0, 1, 4, 3} # o tipo sets retorna os elementos em ordem numérica ou alfabética
+
+print(c1)
+
+# Criação do mesmo conjunto, porém com uma ordenação diferente dos itens
+
+c2 = {2, 1, 4, 3, 0}
+
+print(c2)
+
+# Conjunto heterogêneo
+
+c3 = {2, 'a', 5.44, True, None}
+
+print(c3)
+
+# não existe uma maneira direta de acessa a os elementos do sets
+
+# o tipo set é uma estrutura projetada para não fornecer acesso aos elementos e sim para representar os dados em forma de conjunto e oferecer operações matemáticas tradicionais
+
+    # união - A ∪ B ( O resultado será o conjunto formado por todos os elementos de A e B )
+
+    # interseção - A ∪ B ( O resultado será o conjunto formado apenas pelos elementos que estejam em A e B, simultaneamente )
+
+    # diferença - A - B ( O resultado será o conjunto formado pelos elementos que estejam em A, mas que não estejam em B )
+
+# as operações podem ser realizado através de operadores ou métodos
+
+# Criação dos conjuntos A e B
+
+A = {1, 2, 3, 4, 5}
+
+B = {4, 5, 6, 7, 8}
+
+print('A:', A)
+
+print('B:', B)
+
+# Operação de União: (A ∪ B)
+
+print('A | B =>', A | B)
+
+print('A.union(B) =>', A.union(B))
+
+# Operação de Interseção: (A ∩ B)
+
+print('A & B =>', A & B)
+
+print('A.intersection(B) =>', A.intersection(B))
+
+# Operação de Diferença: (A - B) e (B - A)
+
+print('A - B =>', A - B)
+
+print('A.difference(B) =>', A.difference(B))
+
+print('B - A =>', B - A)
+
+print('B.difference(A) =>', B.difference(A))
+
+# metodos
+
+# Criação dos conjuntos A e B
+
+c1 = {1, 2, 3, 4, 5}
+
+c2 = {4, 5}
+
+c3 = {91, 92, 93}
+
+# Adiciona um elemento ao conjunto
+
+c1.add(6)
+
+print(c1)
+
+# Adiciona os elementos de uma sequência iterável
+
+c1.update([2, 4, 6, 8])
+
+print(c1)
+
+# Descarta um elemento do conjunto
+
+c1.discard(8)
+
+print(c1)
+
+# Diferentemente do set.remove(), o discard não gera um erro se o elemento a ser removido não existir
+
+c1.discard(99)
+
+print(c1)
+
+# Verifica se os conjuntos são disjuntos, ou seja, se não possuem nenhum elemento em comum
+
+print(c1.isdisjoint(c2))
+
+print(c1.isdisjoint(c3))
+
+# Verifica se o conjunto é subconjunto de outro
+
+print(c1.issubset(c2))
+
+print(c2.issubset(c1))
+
+# Verifica se o conjunto contém outro conjunto (superset)
+
+print(c1.issuperset(c2))
+
+print(c2.issuperset(c1))
+
+# exemplo prático com sets ( um programa para gerenciar três turmas de idioma inglês, espanhol e francês )
+
+# precisamos resolver dois problemas ( 1.cria uma relação com todas os alunos da escola sem repetições ) ( 2.Identificar os alunos que estão matriculados em pelo menos duas ou mais turmas para oferecermos um desconto )
+
+# Criação dos conjuntos de alunos das turmas ( o tipo sets é a melhor forma porque não retorna os elementos repetidos )
+
+ING = {'Gabriel', 'Caio', 'Maria', 'Ana', 'Juliano', 'Flávia', 'Rubens', 'Bruna'}
+
+ESP = {'Caio', 'Artur', 'Beatriz', 'Carolina', 'Maria', 'Juliano', 'Bruna', 'Rui'}
+
+FRA = {'Pedro', 'Bruna', 'Paula', 'Tiago', 'Maria', 'Flávia', 'Rui', 'Carolina'}
+
+# Operação de união dos conjuntos (união dos alunos de todas as turmas)
+
+# intercessão de todas as turmas
+
+# Também poderia ser: ALL = ING.union(ESP).union(FRA)
+
+ALL = ING | ESP | FRA
+
+# Exibição do resultado
+
+print('Relação de todos os alunos da escola:')
+
+print(ALL)
+
+# calcula a intercessão entre os pares de conjuntos e depois realiza a união das intercessões gerando a lista final d
+
+ING = {'Gabriel', 'Caio', 'Maria', 'Ana', 'Juliano', 'Flávia', 'Rubens', 'Bruna'}
+
+ESP = {'Caio', 'Artur', 'Beatriz', 'Carolina', 'Maria', 'Juliano', 'Bruna', 'Rui'}
+
+FRA = {'Pedro', 'Bruna', 'Paula', 'Tiago', 'Maria', 'Flávia', 'Rui', 'Carolina'}
+
+# 1 – Interseção entre os pares de turmas: (ING & ESP), (ING & FRA) e (ESP & FRA)
+
+# 2 – Calcula a união das interseções
+
+ALUNOS_DESCONTO = (ING & ESP) | (ING & FRA) | (ESP & FRA)
+
+# Exibição do resultado
+
+print('Relação de dos alunos com desconto:')
+
+print(ALUNOS_DESCONTO)
+
+# dict ( o tipo de dado dict é uma coleção de itens (igual aos outros) entretanto cada elemento é um par key/value ( chave - valor ) os pares indicam que cada elemento possui um valor/value atrelado a uma chave/key)
+
+# o dict é feito por chaves {} e as chaves (key) são unicas e imutaveis
+
+# Dicionário onde as chaves são do tipo string
+
+d1 = {'nome': 'Antônio', 'idade': 36, 'sexo': 'masculino'}
+
+print(d1)
+
+# Dicionário onde as chaves são do tipo inteiro
+
+d2 = {2: 'dois', 1: 'um', 4: 'quatro', 3: 'três', 0: 'zero'}
+
+print(d2)
+
+# Dicionário com chaves de tipos mistos
+
+d3 = {2: 'a', 5.44: True, 'key': None}
+
+print(d3)
+
+# Dicionário vazio
+
+d4 = {}
+
+print(d4)
+
+# a única forma de acessa os elemento do dict é por meio da chave (key) entre colchetes []
+
+# Criação dos dicionários
+
+d1 = {2: 'dois', 1: 'um', 4: 'quatro', 3: 'três', 0: 'zero'}
+
+d2 = {'nome': 'Antônio', 'idade': 36, 'sexo': 'masculino'}
+
+# Acesso aos elementos
+
+print(d1[0])
+
+print(d1[2])
+
+print(f'Meu nome é {d2["nome"]} e tenho {d2["idade"]} anos')
+
+# se tenta acessa um elemento por uma chave que não existe retornara erro de execução alertando que a chave não existe
+
+# mas existe uma forma de acessar os elementos (dic.get(key)) que ao invés de retorna erro retorna um valor nulo
+
+# Criação do dicionário
+
+d1 = {'nome': 'Antônio', 'idade': 36, 'sexo': 'masculino'}
+
+# Acesso por meio do método get()
+
+print(d1.get('endereço'))
+
+# o valor/value são mutaveis pode adicionar novos itens ou alterar o valor, se a chave (key) não existir um novo par de (key - value) será adicionado ao dicionário
+
+# Criação do dicionário
+
+d1 = {'nome': 'Antônio', 'idade': 36, 'sexo': 'masculino'}
+
+print(d1)
+
+# Atualização do valor da chave 'nome'
+
+d1['nome'] = 'Antônio Carlos'
+
+print(d1)
+
+# Adição da chave 'endereço' junto com o valor 'Rua 123'
+
+d1['endereço'] = 'Rua 123'
+
+print(d1)
+
+# o dict também tem varios operadores, funções e métodos que operam seus elementos algumas das operações se comporta da mesma forma que os outros elementos e outras possuem diferenças
+
+  # o min() e o max() continua retornando o minimo minimo e o máximo mais funciona só com a chave/key ignorando o seus valor/value
+
+  # Os operadores de filiação in e not in também operam sobre as chaves, e não sobre os valores.
+
+  # O método pop(key) remove o elemento com a chave key. Para remover o ultimo elemento existe o método popitem().
+
+# Cria o dicionário
+
+d1 = {'zero': 0, 'um': 1, 'dois': 2, 'três': 3, 'quatro': 4}
+
+print(d1)
+
+# Encontra a maior e menor chave
+
+print('Maior e menor chave:', max(d1), min(d1))
+
+# Adiciona elementos de um outro dicionario
+
+d1.update({'cinco': 5, 'seis': 6})
+
+print(d1)
+
+# Verifica se o dicionário possui as seguintes chaves
+
+print("A chave 'dois' está no dicionário?", 'dois' in d1)
+
+print("A chave 'cinco' não está no dicionário?", 'dois' in d1)
+
+# Remove o elemento com chave 'zero' e o valor
+
+d1.pop('zero')
+
+print(d1)
+
+# remove o último elemento com chave e o valor
+
+d1.popitem()
+
+print(d1)
+
+# também é possível utilizar o loop for in no dict ( e em outras estruturas de dados ) entretanto devemos fica atento ao sobre o que queremos iterar
+
+  # no dict podemos iterar sobre chaves (dict.keys()) sobre os valores (dict.values()) ou sobre os itens (dict.items()) no caso dos pares key:value se não específica, a interação sera sobre as chaves por padrão
+
+# Cria o dicionário
+
+d1 = {'zero': 0, 'um': 1, 'dois': 2, 'três': 3, 'quatro': 4}
+
+# Itera sobre as chaves
+
+for key in d1:
+
+    if key == 'três':
+
+        print('Chave três encontrada!')
+
+for key in d1.keys():
+
+    if key == 'quatro':
+
+        print('Chave quatro encontrada!')
+
+# Itera sobre os valores
+
+soma = 0
+
+for value in d1.values():
+
+  soma += value
+
+print('Soma dos valores do dicionário:', soma)
+
+# Itera sobre os itens
+
+for key, value in d1.items():
+
+ print(key, value)

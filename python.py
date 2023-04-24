@@ -130,7 +130,7 @@ qpw = 'consolação'
 print('primeira letra da str: ',qpw[0]) # c
 print('ultima letra da str: ',qpw[9]) # o
 print('pega a letra L da str: ',qpw[5]) # l
-print('pega algumas letras da palavra: ',qpw[0:1:3:4])
+print('pega algumas letras da palavra: ',qpw[0:5:1]) # começa pelo 0 vai até o 5 (não retorna a letra do numero 5) pulando de 1 em 1
 
 # indices negativos
 print('pega a primeira letra da str: ',qpw[-10]) # c

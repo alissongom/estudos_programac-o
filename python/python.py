@@ -1,59 +1,39 @@
 # tipos primitivos de dados em python
-
 # int
-
 x = 817 # x está atribuido ao valor 817
-
 v = -x # a variável esta retornando o valor negativo
-
 print(x,v)
 
 # float
-
 f = 28.39
-
 a = -f
-
 print(f,a)
 
 # bool
-
 ds = True # 1
-
 we = False # 0
-
 print(ds,we)
 
 # str (tipo não primitivo)
-
 q = 'str com aspas simples são mais usado para deixa o código legivel e serve para coloca "aspas duplas" dentro\n' # \n essa função faz quebra de linha
-
 s = "str com aspas duplas serve para coloca 'aspas simples' dentro"
-
 z = '''\te existe str com aspas triplas que serve para coloca 'aspas simples' e "aspas duplas" dentro
 
 da para fazer multi quebras de linhas e multi    espaços''' # a função \t adiciona um espaço horizontal
-
 print(q, s, z)
 
 # complex (tipo coomplexo)
-
 de = 3j
-
 print(de)
 
 # tem o tipo especial que não tem nenhum valor o NoneType
-
 q = None
 
 # existe uma função que diz qual é o tipo de dado type()
-
 print(type(q))
 
 # atribuição multipla
-
 name, surname, alias, age = "Brais", "Moure", 'MoureDev', 35
-
 print("Me llamo:", name, surname, ". Mi edad es:", age, ". Y mi alias es:", alias)
 
 # operadores dos tipos primitivos de dados

@@ -414,6 +414,7 @@ list[-1] = list[-1] + 1
 print(list)
 list.remove('a') # remove a primeira elemento 'a' que tiver na list ( pode dar erro se o elemento não existir )
 print(list)
+
 # dá para usa operadores de cocatenação (+), repetição (*) e de filiação (in) com as listas. Também podemos utilizar funções e métodos. igual na str
 l1 = [30, 10, 20]
 l2 = [2, 'a', 5.44, True]
@@ -516,6 +517,7 @@ print('A - B =>', A - B)
 print('A.difference(B) =>', A.difference(B))
 print('B - A =>', B - A)
 print('B.difference(A) =>', B.difference(A))
+
 # metodos
 # Criação dos conjuntos A e B
 c1 = {1, 2, 3, 4, 5}
@@ -651,38 +653,38 @@ l2 = [3, 1, 5, 9, 0, 8, 2, 3, 4]
 l3 = [12, 43, 23, 12, 789]
 # declaraca a função que soma os elementos da lista
 def soma_lista(lista): # define a função e o nome da função e o argumento listas
-   soma = 0
-      for item in lista:
-             soma += item
-                    return soma # return retorna o resultado da função
-                    # chama a função para cada lista
-                    soma_l1 = soma_lista(l1) # chama a função com um argumento
-                    soma_l2 = soma_lista(l2)
-                    soma_l3 = soma_lista(l3)
-                    print(f'Resultado: l1={soma_l1}, l2={soma_l2}, l3={soma_l3}')
-                    # utilização de funções ( Vamos considerar o seguinte código, onde as funções são utilizadas diversas vezes e na ordem que desejarmos: )
-                    # exibe mensagem de boas vindas à uma pessoa
-                    def boas_vindas(nome):
-                     print(f'Olá {nome}. Seja bem-vindo (a)!') # essa função não retornar um valor e por isso não precisa do return
-                     # calcula a área de um quadrado: l x l
-                     def area_quadrado(lado): 
-                      return lado * lado
-                      # calcula a área de um triângulo: (b x h) / 2
-                      def area_triangulo(base, altura): 
-                       return (base * altura)/2
-                       # Realiza as chamadas das funções
-                       boas_vindas('Priscila')
-                       print(area_triangulo(4, 5))
-                       boas_vindas('Maria')
-                       boas_vindas('Joana')
-                       print(area_quadrado(4)) # a área_quadrado precisa só de 1 argumento para realizar o cálculo e retorna o valor
-                       print(area_quadrado(10))
-                       boas_vindas('Antônio')
-                       print(area_quadrado(10))
-                       print(area_triangulo(5, 2)) # a area_triangulo precisa de dois argumentos para realizar o cálculo
-                       print(area_triangulo(4, 5))
-                       # Vamos considerar agora outro exemplo, que apresenta diferentes conceitos das funções em Python.
-                       # Realiza uma divisão. Se o divisor é zero, retorna uma mensagem de erro. 
+    soma = 0
+        for item in lista:
+            soma += item
+    return soma # return retorna o resultado da função
+# chama a função para cada lista
+soma_l1 = soma_lista(l1) # chama a função com um argumento
+soma_l2 = soma_lista(l2)
+soma_l3 = soma_lista(l3)
+print(f'Resultado: l1={soma_l1}, l2={soma_l2}, l3={soma_l3}')
+# utilização de funções ( Vamos considerar o seguinte código, onde as funções são utilizadas diversas vezes e na ordem que desejarmos: )
+# exibe mensagem de boas vindas à uma pessoa
+def boas_vindas(nome):
+    print(f'Olá {nome}. Seja bem-vindo (a)!') # essa função não retornar um valor e por isso não precisa do return
+# calcula a área de um quadrado: l x l
+def area_quadrado(lado): 
+    return lado * lado
+# calcula a área de um triângulo: (b x h) / 2
+def area_triangulo(base, altura): 
+    return (base * altura)/2
+# Realiza as chamadas das funções
+boas_vindas('Priscila')
+print(area_triangulo(4, 5))
+boas_vindas('Maria')
+boas_vindas('Joana')
+print(area_quadrado(4)) # a área_quadrado precisa só de 1 argumento para realizar o cálculo e retorna o valor
+print(area_quadrado(10))
+boas_vindas('Antônio')
+print(area_quadrado(10))
+print(area_triangulo(5, 2)) # a area_triangulo precisa de dois argumentos para realizar o cálculo
+print(area_triangulo(4, 5))
+# Vamos considerar agora outro exemplo, que apresenta diferentes conceitos das funções em Python.
+# Realiza uma divisão. Se o divisor é zero, retorna uma mensagem de erro. 
                        def div(dividendo, divisor):
                            if divisor == 0:
                                    print('ERRO: Divisor igual à zero!')

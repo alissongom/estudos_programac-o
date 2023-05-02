@@ -146,6 +146,8 @@ print(qpw[3:7]) # palavra sola
 print(qpw[:7]) # palavra consola
 
 
+
+
 # operadores de string ( * repete a str N vezes ) ( + Concatena (une) duas strings em uma única str )
 jk = 'belo'
 jn = 'horizonte'
@@ -156,6 +158,12 @@ print((jk + ',') * 4) # retorna belo 4 vezes com vírgula
 print(jk + jn)
 print(jk + ' ' + jn) # a vírgula com um espaço dentro serve para dar espaço entre as str
 print(jk + ' monte')
+
+# parâmetros opcionais ( por padrão o print da quebra de linha )
+a = 'hello'
+b = 'horld'
+print(a, end=' ' + b) # end='' especifica o que vai acontecer no final da linha, como quebra de linha assim o próximo texto vai estar na mesma linha ( é possível também usa end no print, print("Olá, mundo!", end='')print("Este é um exemplo.")
+print("Janeiro", "Fevereiro", "Março", sep="-") # o sep especifica o que deve ser adicionado entre os valores que serão impressos
 
 # também tem os operadores para verificar se uma str esta esta contida na outra str
 # `in` retorna True se a str1 estiver contida na str2

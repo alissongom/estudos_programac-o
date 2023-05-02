@@ -685,215 +685,388 @@ print(area_triangulo(5, 2)) # a area_triangulo precisa de dois argumentos para r
 print(area_triangulo(4, 5))
 # Vamos considerar agora outro exemplo, que apresenta diferentes conceitos das funções em Python.
 # Realiza uma divisão. Se o divisor é zero, retorna uma mensagem de erro. 
-                       def div(dividendo, divisor):
-                           if divisor == 0:
-                                   print('ERRO: Divisor igual à zero!')
-                                           return # a função vai retorna a mensagem se o divisor for igual a zero
-                                               return dividendo / divisor # e vai retornar o valor do cálculo
-                                               # Função similar à função div, mas que retorna o dividendo e o resto da divisão.
-                                               def div_qr(dividendo, divisor):
-                                                   if divisor == 0:
-                                                           print('ERRO: Divisor igual à zero!')
-                                                                   return
-                                                                       quociente = dividendo // divisor
-                                                                           resto = dividendo % divisor
-                                                                               return (quociente, resto) # vai retorna o quociente e o resto da divisão
-                                                                               print('div(10, 4) ==>', div(10, 4)) # dividento=10 e divisor=4
-                                                                               print('div(10, 0) ==>', div(10, 0)) # dividento=10 e divisor=0
-                                                                               print('div_qr(10, 4) ==>', div_qr(10, 4)) # dividento=10 e divisor=4
-                                                                               # atribuição dos múltiplos valores em uma variável única do tipo tupla
-                                                                               resultado = div_qr(21, 5)
-                                                                               print('resultado:', resultado, type(resultado))
-                                                                               # atribuição dos múltiplos valores em variáveis separadas
-                                                                               quociente, resto = div_qr(21, 5)
-                                                                               print('quociente:', quociente, type(quociente))
-                                                                               print('resto:', resto, type(resto))
-                                                                               # funções que utilizam outras funções
-                                                                               # Verifica se é um divisor inválido (divisor == 0)
-                                                                               def divisor_invalido(divisor):
-                                                                                   if divisor == 0:
-                                                                                           print('ERRO: Divisor igual à zero!')
-                                                                                                   return True # retorna True se for zero
-                                                                                                       return False # retorna False se não for zero
-                                                                                                       # Retorna o resultado de uma divisão
-                                                                                                       def div(dividendo, divisor):
-                                                                                                           if divisor_invalido(divisor): # chama a primeira função para verificar se é zero
-                                                                                                                   return
-                                                                                                                       return dividendo / divisor
-                                                                                                                       # Retorna o quociente e o resto de uma divisão
-                                                                                                                       def div_qr(dividendo, divisor):
-                                                                                                                           if divisor_invalido(divisor):
-                                                                                                                                   return
-                                                                                                                                       quociente = dividendo // divisor
-                                                                                                                                           resto = dividendo % divisor
-                                                                                                                                               return (quociente, resto)
-                                                                                                                                               print('div(10, 4) ==>', div(10, 4)) # dividento=10 e divisor=4
-                                                                                                                                               print('div(10, 0) ==>', div(10, 0)) # dividento=10 e divisor=0
-                                                                                                                                               print('div_qr(10, 4) ==>', div_qr(10, 4)) # dividento=10 e divisor=4
-                                                                                                                                               # argumentos da funções ( é possível passar os valores dos argumentos em uma ordem diferente, mas neste caso precisamos declarar o nome dos argumentos na chamada da função, conforme o exemplo a seguir.)
-                                                                                                                                               # calcula a área de um triângulo: (b x h) / 2
-                                                                                                                                               def area_triangulo(base, altura): 
-                                                                                                                                                return (base * altura)/2
-                                                                                                                                                print(area_triangulo(altura=10, base=5)) # pode dar erro se passar só 1 argumento quando chama a função
-                                                                                                                                                # existe também argumentos predefinidos argumentos default isso permite que os argumentos da função possam ter um valor predefinido, pode atribuir um valor padrão para um argumento por meio do operador de atribuição ( = )
-                                                                                                                                                def exibe_pessoa(nome, idade=30): 
-                                                                                                                                                 print(f'Meu nome é {nome} e tenho {idade} anos.')
-                                                                                                                                                 exibe_pessoa('Antônio')
-                                                                                                                                                 exibe_pessoa('Antônio', 36)
-                                                                                                                                                 # modulos ( são bibliotecas em python feito por outros devs assim a gente pode reaproveitar esses códigos já prontos para o projetos )
-                                                                                                                                                   # criação e importação de módulos ( Um módulo em Python nada mais é do que um arquivo texto contendo códigos com declarações de variáveis ou funções esses módulos são sempre salvos com extensão .py )
-                                                                                                                                                     # Nós utilizamos módulos para poder organizar (modularizar) => ( organizar por módulos ) os nossos códigos de acordo com as funcionalidades de cada conjunto de funções.
-                                                                                                                                                       # Por exemplo, se estivéssemos desenvolvendo um programa para geometria, poderíamos ter um módulo para cada um das figura geométrica (quadrado, triangulo, círculo etc.) ou então um módulo para cada todos os tipos de cálculo geométrico (área, volume, perímetro etc.)
-                                                                                                                                                         # a criação dos módulos é essencial para a modularização dos programas, principalmente aqueles com milhares de linhas de código.
-                                                                                                                                                           # Por exemplo, vamos criar um modulo (arquivo), chamado areas que contém funções básicas para o cálculo da área de diferentes figuras geométricas. Para tanto, primeiro precisamos criar um arquivo e em seguida salvá-lo com o nome areas.py. Em seguida, basta adicionarmos o conteúdo do módulo, que são as funções que irão realizar os cálculos:
-                                                                                                                                                           # Em Python, a utilização de códigos externos é realizada por meio da importação de módulos, com a sintaxe: import <modulo>. Portanto, para importamos o nosso módulo de exemplos, devemos utilizar a instrução:
-                                                                                                                                                           import areas
-                                                                                                                                                           # Entretanto, a importação não significa que já importamos todos os nomes de funções e variáveis declaradas no módulo diretamente. Nós apenas importamos o nome do areas, e a partir deste nome podemos acessaras as declarações contidas no módulo:
-                                                                                                                                                           import areas
-                                                                                                                                                           print(areas.triangulo(5, 8))
-                                                                                                                                                           # para ter acesso direto a todos as declarações do módulo inclusive o PI
-                                                                                                                                                           from areas import *
-                                                                                                                                                           print(triangulo(5, 8))
-                                                                                                                                                           print(quadrado(6))
-                                                                                                                                                           print(PI)
-                                                                                                                                                           # O comando from import possibilita a importação de todas as declarações de um módulo, como o exemplo anterior, ou a importação de algumas declarações específicas, como o exemplo a seguir. Desta forma, apenas as funções quadrado() e circulo() estarão disponíveis para utilização no código.
-                                                                                                                                                           from areas import quadrado, circulo
-                                                                                                                                                           # Também é possível atribuirmos um novo nome para o módulo quando realizamos a importação, da seguinte forma:
-                                                                                                                                                           import areas as ar
-                                                                                                                                                           print(ar.triangulo(5, 8))
-                                                                                                                                                           print(ar.quadrado(6))
-                                                                                                                                                           # modulos embutidos em python ( O Python possuí vários módulos já embutidos na linguagem, que oferecem diversas funcionalidades úteis ao desenvolvedor. Estes módulos são desenvolvidos e mantidos pela comunidade responsável pela linguagem e são exaustivamente testados e otimizados antes de serem lançados aos usuários finais. A seguir iremos exemplificar alguns dos módulos embutidos mais conhecidos e utilizados pelos desenvolvedore )
-                                                                                                                                                           # modulo com funções matemáticas para cálculos mais complexos
-                                                                                                                                                           import math
-                                                                                                                                                           print('Função cosseno:', math.cos(100))
-                                                                                                                                                           print('Função log:', math.log(10))
-                                                                                                                                                           # modulo para construção de sequências elaboradas
-                                                                                                                                                           import itertools
-                                                                                                                                                           print(list(itertools.combinations('ABCD', 3))) # combinação de 3 em 3
-                                                                                                                                                           print(list(itertools.permutations(['a', 'b', 'c'], 2))) # permutação de 2 em 2
-                                                                                                                                                           # modulo para criação de números e sequências randômicas
-                                                                                                                                                           import random
-                                                                                                                                                           print('Numero aleatório entre 0 e 1:', random.random())
-                                                                                                                                                           print('Inteiro aleatório entre 50 e 100:', random.randint(50, 100))
-                                                                                                                                                           # modulo para funcionalidades que dependem do sistema operacional
-                                                                                                                                                           import os
-                                                                                                                                                           os.mkdir('pasta') # cria um diretório chamado pasta 
-                                                                                                                                                           print('Caminho completo:', os.path.join('/home/antonio', 'pasta', 'arquivo.txt'))
-                                                                                                                                                           # instalação de novos módulos ( existe também varios módulo que são desenvolvidos e mantidos por terceiros O módulo, ou um conjunto deles, pode ser disponibilizado na forma de packages, "empacotando" os códigos em um arquivo)
-                                                                                                                                                             # o repositorio oficial do python tem mais de 360 mil de pacotes disponível para download
-                                                                                                                                                               # a principal forma de instala um pacote é utilizando o pip, pip install <pacote>
-                                                                                                                                                               # o pacote mais utilizado na ciência de dados para manipulação e analise de dados é o pandas essa é a forma para instalar o pacote, pip install pandas
-                                                                                                                                                                 # Se necessário podemos também especificar uma versão específica do pacote para a instalação: pip install pandas==1.3.5
-                                                                                                                                                                   # Também é possível atualizar um pacote para a sua versão mais atual, utilizando o pip: pip install --upgrade pandas
-                                                                                                                                                                   # manipulação de arquivos Criação, Abertura e Fechamento de Arquivos
-                                                                                                                                                                     # A criação de arquivos (e, consequentemente, a abertura deles), é realizada por meio da função open(arquivo, modo), que permite criar e/ou abrir um arquivo com o nome (arquivo) especificado como argumento.
-                                                                                                                                                                       # 'r' Modo somente leitura (modo padrão). ( pode ser combinado com o 't' e 'b')
-                                                                                                                                                                         # 'w' Modo de escrita. Cria um arquivo, caso ainda não exista, ou substitui o arquivo atual. ( se o arquivo ja existir ele pode apaga os dados do arquivo anterior e permitir escrever novos dados ) ( pode ser combinado com 't' e 'b' )
-                                                                                                                                                                           # 'x' Modo de escrita. Cria um arquivo e, se o arquivo já existir, retorna um erro.
-                                                                                                                                                                             # 'a' Modo de escrita. Cria um arquivo, caso ainda não exista. Se o arquivo já existir, novas escritas serão adicionadas ao final dele. ( Pode ser combinado com os modos "t" ou "b", para abrir o arquivo no modo de texto ou binário, respectivamente. )
-                                                                                                                                                                               # 't' Abre o arquivo no modo texto (modo padrão). ( Pode ser combinado com os modos "r", "w", "x" ou "a". )
-                                                                                                                                                                                 # 'b' Abre o arquivo no modo binário. ( Pode ser combinado com os modos "r", "w", "x" ou "a". )
-                                                                                                                                                                                 # para abrir um arquivo em modo leitura
-                                                                                                                                                                                 arquivo = open("cidades.txt", "r")
-                                                                                                                                                                                 arquivo.close() # .close() serve para fechar o arquivo para não perder os dados e não ser corrompido
-                                                                                                                                                                                 # leitura de arquivos ( existe três maneiras de ler arquivos a primeira é lendo todo o arquivo e retornando armazenando em uma variavel e utiliza-se o método read() que retorna os dados do arquivo em str)
-                                                                                                                                                                                 arquivo = open('cidades.txt', 'r')
-                                                                                                                                                                                 linhas = arquivo.read()
-                                                                                                                                                                                 arquivo.close()
-                                                                                                                                                                                 print(linhas)
-                                                                                                                                                                                 # Outra maneira é a leitura das linhas do arquivo por meio do método readlines(). Este método retorna uma lista de strings, onde cada elemento da lista corresponde à uma linha do arquivo:
-                                                                                                                                                                                 arquivo = open('cidades.txt', 'r')
-                                                                                                                                                                                 linhas = arquivo.readlines()
-                                                                                                                                                                                 arquivo.close()
-                                                                                                                                                                                 print(linhas) # mais esse método retorna quebra de linha \n para cada item da lista precisa de um novo tratamento para remove-las
-                                                                                                                                                                                 # pode-se criar outra lista (novas_linhas) onde, para cada elemento da lista anterior, fosse aplicado o método rstrip() ( rstrip() remove caracteres em branco e quebras de linha ao final de uma string )
-                                                                                                                                                                                 novas_linhas = []
-                                                                                                                                                                                 for linha in linhas:
-                                                                                                                                                                                     novas_linhas.append(linha.rstrip())
-                                                                                                                                                                                     print(novas_linhas)
-                                                                                                                                                                                     # a última maneira é iterar sobre as linhas do arquivo
-                                                                                                                                                                                     arquivo = open('cidades.txt', 'r')
-                                                                                                                                                                                     for linha in arquivo:
-                                                                                                                                                                                      print(linha.rstrip())
-                                                                                                                                                                                      arquivo.close()
-                                                                                                                                                                                      # escrita de arquivo ( agora vamos adicionar informações ao arquivo das proximas cidades no final do arquivo, podemos utilizar dois métodos. Mas antes é necessário abrirmos o arquivo em modo de escrita e de adição de dados no seu final (modo 'a'))
-                                                                                                                                                                                        # o primeiro metodo é o write('texto') que recebe como parâmetro a str que será inserido no final do arquivo
-                                                                                                                                                                                        arquivo = open('cidades.txt', 'a')
-                                                                                                                                                                                        arquivo.write('\nRJ; São Gonçalo; 1031903\n')
-                                                                                                                                                                                        arquivo.close()
-                                                                                                                                                                                        # o segundo método é writelines(linhas) que possibilita a escrita de diversos textos de uma só vez, utilizando como parâmetro uma estrutura de dados que seja iterável (ex.: list ou tuple).
-                                                                                                                                                                                        linhas = [
-                                                                                                                                                                                         '\nAL; Maceió; 1005319\n',
-                                                                                                                                                                                          '\nRJ; Duque de Caxias; 878402\n',
-                                                                                                                                                                                           '\nRN; Natal; 862044\n',
-                                                                                                                                                                                            '\nMS; Campo Grande; 843120\n'
-                                                                                                                                                                                            ]
-                                                                                                                                                                                            arquivo = open('cidades.txt', 'a')
-                                                                                                                                                                                            arquivo.writelines(linhas)
-                                                                                                                                                                                            arquivo.close()
-                                                                                                                                                                                            # compreensão de listas ( list comprenhesion ) É um conceito que permite otimizar a criação de novas listas e, de quebra, diminuir o número de linhas de código. este recurso é mais eficiente do que o modo tradicional de criação, pois requer um uso menor de memória e a operação é realizada em menos tempo.
-                                                                                                                                                                                              # Por exemplo, tradicionalmente, para criar uma lista dos números de 1 a 10 elevado à potência 2, seria utilizado o seguinte bloco de código:
-                                                                                                                                                                                              potencias = []
-                                                                                                                                                                                              for item in range(1, 11):
-                                                                                                                                                                                               potencias.append(item ** 2)
-                                                                                                                                                                                               print(potencias)
-                                                                                                                                                                                               # A mesma operação pode ser reescrita da seguinte forma, utilizando compreensão de listas:
-                                                                                                                                                                                               potencias = [item ** 2 for item in range(1, 11)] # uma lista dentro tem o loop que itera adicionando cada numero a variavel item e o cálculo é feito e o valor adicionando a lista potencias
-                                                                                                                                                                                               print(potencias)
-                                                                                                                                                                                               # Abaixo são apresentados mais alguns exemplos:
-                                                                                                                                                                                               print( [n * 10 for n in range(1, 16)] ) # Multiplica por 10 os números de 1 a 15
-                                                                                                                                                                                               print( [c.upper() for c in 'antonio'] ) # Cria lista com os caracteres em maísculo
-                                                                                                                                                                                               print( [(n % 2 == 0) for n in range(0, 10)] ) # Indica se n é par ou não
-                                                                                                                                                                                               # agora precisamos cria uma lista dos numeros de 1 a 10 elevado a 2 mais apenas so numeros impares devem ser considerado e os numeros pares descartado então precisa de uma condição para fazer a verificação Tradicionalmente, pode-se resolver este problema com o seguinte trecho de código:
-                                                                                                                                                                                               potencias = []
-                                                                                                                                                                                               for item in range(1, 11):
-                                                                                                                                                                                                   if item % 2 != 0:
-                                                                                                                                                                                                           potencias.append(item ** 2)
-                                                                                                                                                                                                           print(potencias)
-                                                                                                                                                                                                           # Observe que o código tem um fluxo condicional que verifica se o número é ímpar ou não (if item % 2 != 0). Por sorte, o recurso de compreensão de listas também permite que seja realizado essa verificação, com a seguinte sintaxe:
-                                                                                                                                                                                                           potencias = [item ** 2 for item in range(1, 11) if item % 2 != 0] # uma lista dentro tem o loop que itera adicionando cada numero a variavel item o if verifica se o numero é ímpar e o valor é adicionando a lista potencias
-                                                                                                                                                                                                           print(potencias)
-                                                                                                                                                                                                           # compreensão de dicionário ( dict comprenhesion ) Com uma sintaxe bem semelhante à compreensão de listas, podem ser utilizados com ou sem a verificação condicional
-                                                                                                                                                                                                             # Considere o mesmo problema abordado anteriormente (números de 1 a 10 elevados a potência 2). Entretanto, deseja-se criar um dicionário onde a chave é o próprio número e o valor é o número elevado à potência 2. Abaixo, os dois trechos de código apresentam a solução tradicional, para todos os números e para apenas os números ímpares:
-                                                                                                                                                                                                             # todos os números elevado à potência 2
-                                                                                                                                                                                                             dict_todos = {}
-                                                                                                                                                                                                             for item in range(1, 11):
-                                                                                                                                                                                                              dict_todos[item] = item ** 2
-                                                                                                                                                                                                              print('Todos numeros:', dict_todos)
-                                                                                                                                                                                                              # apenas números ímpares elevado à potência 2
-                                                                                                                                                                                                              dict_impares = {}
-                                                                                                                                                                                                              for item in range(1, 11):
-                                                                                                                                                                                                               if item % 2 != 0:
-                                                                                                                                                                                                                  dict_impares[item] = item ** 2
-                                                                                                                                                                                                                  print('Números ímpares:', dict_impares)
-                                                                                                                                                                                                                  # usando a compreensão de dicionário o código pode ser dessa forma
-                                                                                                                                                                                                                  # todos os números elevado à potência 2
-                                                                                                                                                                                                                  dict_todos = {item: item ** 2 for item in range(1, 11)}
-                                                                                                                                                                                                                  print('Todos numeros:', dict_todos)
-                                                                                                                                                                                                                  # apenas números ímpares elevado à potência 2
-                                                                                                                                                                                                                  dict_impares = {item: item ** 2 for item in range(1, 11) if item % 2 != 0}
-                                                                                                                                                                                                                  print('Números ímpares:', dict_impares) # as compreensões deixam o código mais elegante e pythoninco
-                                                                                                                                                                                                                  # funções anonimas ( funções lambda ) lambda é uma função sem nome por isso que é anônima ela pode ter varios argumentos mais só uma expressão
-                                                                                                                                                                                                                  # Declaração da função
-                                                                                                                                                                                                                  area_quadrado = lambda lado: lado ** 2 # a palavra lado que vem depois de lambda é o argumento e depois a expressão
-                                                                                                                                                                                                                  # Utilização
-                                                                                                                                                                                                                  print(area_quadrado(4)) # essa função é util quando precisamos de uma função específica em curto perido 
-                                                                                                                                                                                                                  # Geralmente utilizamos estas funções em conjunto com outras funções que possuem como argumento outra função, como por exemplo a função map(), que permite que apliquemos uma função em todos os elementos de uma lista, como no exemplo a seguir.
-                                                                                                                                                                                                                  # Função que calcula o triplo de número
-                                                                                                                                                                                                                  triplo = lambda x: x * 3
-                                                                                                                                                                                                                  # Calcula o triplo dos números de uma lista
-                                                                                                                                                                                                                  lista = [4, 5, 9, 7, 0, 1, 8]
-                                                                                                                                                                                                                  print(list(map(triplo, lista)))
-                                                                                                                                                                                                                  # Ou poderíamos fazer de um jeito mais pythonico ainda, em apenas uma linha:
-                                                                                                                                                                                                                  print(list(map(lambda x: x * 3, [4, 5, 9, 7, 0, 1, 8])))
-                                                                                                                                                                                                                  # Atribuição Condicional em Uma Linha, pense em um código que cria uma variavel var, e atribui a ela um valor de acordo com uma das seguintes condições: Se o nome do programador tiver mais de 5 letras, o valor de var deverá ser 100. Caso contrário (o nome tem 5 ou menos letras), o valor de var deverá ser 0.Tal código pode ser escrito da seguinte forma:
-                                                                                                                                                                                                                  nome = 'antonio'
-                                                                                                                                                                                                                  if len(nome) > 5:
-                                                                                                                                                                                                                   var = 100
-                                                                                                                                                                                                                   else:
-                                                                                                                                                                                                                    var = 0
-                                                                                                                                                                                                                    print('O valor de var é:', var)
-                                                                                                                                                                                                                    # o python tem um operador ternario que é utlizado para atribuição de um valor a variavel, condicionado a uma verificação de uma expressão
-                                                                                                                                                                                                                    nome = 'antonio'
-                                                                                                                                                                                                                    var = 100 if len(nome) > 5 else 0
-                                                                                                                                                                                                                    print('O valor de var é:', var)
+def div(dividendo, divisor):
+    if divisor == 0:
+        print('ERRO: Divisor igual à zero!')
+        return # a função vai retorna a mensagem se o divisor for igual a zero
+    return dividendo / divisor # e vai retornar o valor do cálculo
+# Função similar à função div, mas que retorna o dividendo e o resto da divisão.
+def div_qr(dividendo, divisor):
+    if divisor == 0:
+        print('ERRO: Divisor igual à zero!')
+        return
+    quociente = dividendo // divisor
+    resto = dividendo % divisor
+    return (quociente, resto) # vai retorna o quociente e o resto da divisão
+print('div(10, 4) ==>', div(10, 4)) # dividento=10 e divisor=4
+print('div(10, 0) ==>', div(10, 0)) # dividento=10 e divisor=0
+print('div_qr(10, 4) ==>', div_qr(10, 4)) # dividento=10 e divisor=4
+# atribuição dos múltiplos valores em uma variável única do tipo tupla
+resultado = div_qr(21, 5)
+print('resultado:', resultado, type(resultado))
+# atribuição dos múltiplos valores em variáveis separadas
+quociente, resto = div_qr(21, 5)
+print('quociente:', quociente, type(quociente))
+print('resto:', resto, type(resto))
+# funções que utilizam outras funções
+# Verifica se é um divisor inválido (divisor == 0)
+def divisor_invalido(divisor):
+    if divisor == 0:
+        print('ERRO: Divisor igual à zero!')
+        return True # retorna True se for zero
+    return False # retorna False se não for zero
+# Retorna o resultado de uma divisão
+def div(dividendo, divisor):
+    if divisor_invalido(divisor): # chama a primeira função para verificar se é zero
+        return
+    return dividendo / divisor
+# Retorna o quociente e o resto de uma divisão
+def div_qr(dividendo, divisor):
+    if divisor_invalido(divisor):
+        return
+
+    quociente = dividendo // divisor
+
+    resto = dividendo % divisor
+
+    return (quociente, resto)
+
+print('div(10, 4) ==>', div(10, 4)) # dividento=10 e divisor=4
+
+print('div(10, 0) ==>', div(10, 0)) # dividento=10 e divisor=0
+
+print('div_qr(10, 4) ==>', div_qr(10, 4)) # dividento=10 e divisor=4
+
+# argumentos da funções ( é possível passar os valores dos argumentos em uma ordem diferente, mas neste caso precisamos declarar o nome dos argumentos na chamada da função, conforme o exemplo a seguir.)
+
+# calcula a área de um triângulo: (b x h) / 2
+
+def area_triangulo(base, altura): 
+
+ return (base * altura)/2
+
+print(area_triangulo(altura=10, base=5)) # pode dar erro se passar só 1 argumento quando chama a função
+
+# existe também argumentos predefinidos argumentos default isso permite que os argumentos da função possam ter um valor predefinido, pode atribuir um valor padrão para um argumento por meio do operador de atribuição ( = )
+
+def exibe_pessoa(nome, idade=30): 
+
+ print(f'Meu nome é {nome} e tenho {idade} anos.')
+
+exibe_pessoa('Antônio')
+
+exibe_pessoa('Antônio', 36)
+
+# modulos ( são bibliotecas em python feito por outros devs assim a gente pode reaproveitar esses códigos já prontos para o projetos )
+
+  # criação e importação de módulos ( Um módulo em Python nada mais é do que um arquivo texto contendo códigos com declarações de variáveis ou funções esses módulos são sempre salvos com extensão .py )
+
+  # Nós utilizamos módulos para poder organizar (modularizar) => ( organizar por módulos ) os nossos códigos de acordo com as funcionalidades de cada conjunto de funções.
+
+  # Por exemplo, se estivéssemos desenvolvendo um programa para geometria, poderíamos ter um módulo para cada um das figura geométrica (quadrado, triangulo, círculo etc.) ou então um módulo para cada todos os tipos de cálculo geométrico (área, volume, perímetro etc.)
+
+  # a criação dos módulos é essencial para a modularização dos programas, principalmente aqueles com milhares de linhas de código.
+
+  # Por exemplo, vamos criar um modulo (arquivo), chamado areas que contém funções básicas para o cálculo da área de diferentes figuras geométricas. Para tanto, primeiro precisamos criar um arquivo e em seguida salvá-lo com o nome areas.py. Em seguida, basta adicionarmos o conteúdo do módulo, que são as funções que irão realizar os cálculos:
+
+# Em Python, a utilização de códigos externos é realizada por meio da importação de módulos, com a sintaxe: import <modulo>. Portanto, para importamos o nosso módulo de exemplos, devemos utilizar a instrução:
+
+import areas
+
+# Entretanto, a importação não significa que já importamos todos os nomes de funções e variáveis declaradas no módulo diretamente. Nós apenas importamos o nome do areas, e a partir deste nome podemos acessaras as declarações contidas no módulo:
+
+import areas
+
+print(areas.triangulo(5, 8))
+
+# para ter acesso direto a todos as declarações do módulo inclusive o PI
+
+from areas import *
+
+print(triangulo(5, 8))
+
+print(quadrado(6))
+
+print(PI)
+
+# O comando from import possibilita a importação de todas as declarações de um módulo, como o exemplo anterior, ou a importação de algumas declarações específicas, como o exemplo a seguir. Desta forma, apenas as funções quadrado() e circulo() estarão disponíveis para utilização no código.
+
+from areas import quadrado, circulo
+
+# Também é possível atribuirmos um novo nome para o módulo quando realizamos a importação, da seguinte forma:
+
+import areas as ar
+
+print(ar.triangulo(5, 8))
+
+print(ar.quadrado(6))
+
+# modulos embutidos em python ( O Python possuí vários módulos já embutidos na linguagem, que oferecem diversas funcionalidades úteis ao desenvolvedor. Estes módulos são desenvolvidos e mantidos pela comunidade responsável pela linguagem e são exaustivamente testados e otimizados antes de serem lançados aos usuários finais. A seguir iremos exemplificar alguns dos módulos embutidos mais conhecidos e utilizados pelos desenvolvedore )
+
+# modulo com funções matemáticas para cálculos mais complexos
+
+import math
+
+print('Função cosseno:', math.cos(100))
+
+print('Função log:', math.log(10))
+
+# modulo para construção de sequências elaboradas
+
+import itertools
+
+print(list(itertools.combinations('ABCD', 3))) # combinação de 3 em 3
+
+print(list(itertools.permutations(['a', 'b', 'c'], 2))) # permutação de 2 em 2
+
+# modulo para criação de números e sequências randômicas
+
+import random
+
+print('Numero aleatório entre 0 e 1:', random.random())
+
+print('Inteiro aleatório entre 50 e 100:', random.randint(50, 100))
+
+# modulo para funcionalidades que dependem do sistema operacional
+
+import os
+
+os.mkdir('pasta') # cria um diretório chamado pasta 
+
+print('Caminho completo:', os.path.join('/home/antonio', 'pasta', 'arquivo.txt'))
+
+# instalação de novos módulos ( existe também varios módulo que são desenvolvidos e mantidos por terceiros O módulo, ou um conjunto deles, pode ser disponibilizado na forma de packages, "empacotando" os códigos em um arquivo)
+
+  # o repositorio oficial do python tem mais de 360 mil de pacotes disponível para download
+
+  # a principal forma de instala um pacote é utilizando o pip, pip install <pacote>
+
+# o pacote mais utilizado na ciência de dados para manipulação e analise de dados é o pandas essa é a forma para instalar o pacote, pip install pandas
+
+  # Se necessário podemos também especificar uma versão específica do pacote para a instalação: pip install pandas==1.3.5
+
+  # Também é possível atualizar um pacote para a sua versão mais atual, utilizando o pip: pip install --upgrade pandas
+
+# manipulação de arquivos Criação, Abertura e Fechamento de Arquivos
+
+  # A criação de arquivos (e, consequentemente, a abertura deles), é realizada por meio da função open(arquivo, modo), que permite criar e/ou abrir um arquivo com o nome (arquivo) especificado como argumento.
+
+  # 'r' Modo somente leitura (modo padrão). ( pode ser combinado com o 't' e 'b')
+
+  # 'w' Modo de escrita. Cria um arquivo, caso ainda não exista, ou substitui o arquivo atual. ( se o arquivo ja existir ele pode apaga os dados do arquivo anterior e permitir escrever novos dados ) ( pode ser combinado com 't' e 'b' )
+
+  # 'x' Modo de escrita. Cria um arquivo e, se o arquivo já existir, retorna um erro.
+
+  # 'a' Modo de escrita. Cria um arquivo, caso ainda não exista. Se o arquivo já existir, novas escritas serão adicionadas ao final dele. ( Pode ser combinado com os modos "t" ou "b", para abrir o arquivo no modo de texto ou binário, respectivamente. )
+
+  # 't' Abre o arquivo no modo texto (modo padrão). ( Pode ser combinado com os modos "r", "w", "x" ou "a". )
+
+  # 'b' Abre o arquivo no modo binário. ( Pode ser combinado com os modos "r", "w", "x" ou "a". )
+
+# para abrir um arquivo em modo leitura
+
+arquivo = open("cidades.txt", "r")
+
+arquivo.close() # .close() serve para fechar o arquivo para não perder os dados e não ser corrompido
+
+# leitura de arquivos ( existe três maneiras de ler arquivos a primeira é lendo todo o arquivo e retornando armazenando em uma variavel e utiliza-se o método read() que retorna os dados do arquivo em str)
+
+arquivo = open('cidades.txt', 'r')
+
+linhas = arquivo.read()
+
+arquivo.close()
+
+print(linhas)
+
+# Outra maneira é a leitura das linhas do arquivo por meio do método readlines(). Este método retorna uma lista de strings, onde cada elemento da lista corresponde à uma linha do arquivo:
+
+arquivo = open('cidades.txt', 'r')
+
+linhas = arquivo.readlines()
+
+arquivo.close()
+
+print(linhas) # mais esse método retorna quebra de linha \n para cada item da lista precisa de um novo tratamento para remove-las
+
+# pode-se criar outra lista (novas_linhas) onde, para cada elemento da lista anterior, fosse aplicado o método rstrip() ( rstrip() remove caracteres em branco e quebras de linha ao final de uma string )
+
+novas_linhas = []
+
+for linha in linhas:
+
+    novas_linhas.append(linha.rstrip())
+
+print(novas_linhas)
+
+# a última maneira é iterar sobre as linhas do arquivo
+
+arquivo = open('cidades.txt', 'r')
+
+for linha in arquivo:
+
+ print(linha.rstrip())
+
+arquivo.close()
+
+# escrita de arquivo ( agora vamos adicionar informações ao arquivo das proximas cidades no final do arquivo, podemos utilizar dois métodos. Mas antes é necessário abrirmos o arquivo em modo de escrita e de adição de dados no seu final (modo 'a'))
+
+  # o primeiro metodo é o write('texto') que recebe como parâmetro a str que será inserido no final do arquivo
+
+arquivo = open('cidades.txt', 'a')
+
+arquivo.write('\nRJ; São Gonçalo; 1031903\n')
+
+arquivo.close()
+
+# o segundo método é writelines(linhas) que possibilita a escrita de diversos textos de uma só vez, utilizando como parâmetro uma estrutura de dados que seja iterável (ex.: list ou tuple).
+
+linhas = [
+
+ '\nAL; Maceió; 1005319\n',
+
+ '\nRJ; Duque de Caxias; 878402\n',
+
+ '\nRN; Natal; 862044\n',
+
+ '\nMS; Campo Grande; 843120\n'
+
+]
+
+arquivo = open('cidades.txt', 'a')
+
+arquivo.writelines(linhas)
+
+arquivo.close()
+
+# compreensão de listas ( list comprenhesion ) É um conceito que permite otimizar a criação de novas listas e, de quebra, diminuir o número de linhas de código. este recurso é mais eficiente do que o modo tradicional de criação, pois requer um uso menor de memória e a operação é realizada em menos tempo.
+
+  # Por exemplo, tradicionalmente, para criar uma lista dos números de 1 a 10 elevado à potência 2, seria utilizado o seguinte bloco de código:
+
+potencias = []
+
+for item in range(1, 11):
+
+ potencias.append(item ** 2)
+
+print(potencias)
+
+# A mesma operação pode ser reescrita da seguinte forma, utilizando compreensão de listas:
+
+potencias = [item ** 2 for item in range(1, 11)] # uma lista dentro tem o loop que itera adicionando cada numero a variavel item e o cálculo é feito e o valor adicionando a lista potencias
+
+print(potencias)
+
+# Abaixo são apresentados mais alguns exemplos:
+
+print( [n * 10 for n in range(1, 16)] ) # Multiplica por 10 os números de 1 a 15
+
+print( [c.upper() for c in 'antonio'] ) # Cria lista com os caracteres em maísculo
+
+print( [(n % 2 == 0) for n in range(0, 10)] ) # Indica se n é par ou não
+
+# agora precisamos cria uma lista dos numeros de 1 a 10 elevado a 2 mais apenas so numeros impares devem ser considerado e os numeros pares descartado então precisa de uma condição para fazer a verificação Tradicionalmente, pode-se resolver este problema com o seguinte trecho de código:
+
+potencias = []
+
+for item in range(1, 11):
+
+    if item % 2 != 0:
+
+        potencias.append(item ** 2)
+
+print(potencias)
+
+# Observe que o código tem um fluxo condicional que verifica se o número é ímpar ou não (if item % 2 != 0). Por sorte, o recurso de compreensão de listas também permite que seja realizado essa verificação, com a seguinte sintaxe:
+
+potencias = [item ** 2 for item in range(1, 11) if item % 2 != 0] # uma lista dentro tem o loop que itera adicionando cada numero a variavel item o if verifica se o numero é ímpar e o valor é adicionando a lista potencias
+
+print(potencias)
+
+# compreensão de dicionário ( dict comprenhesion ) Com uma sintaxe bem semelhante à compreensão de listas, podem ser utilizados com ou sem a verificação condicional
+
+  # Considere o mesmo problema abordado anteriormente (números de 1 a 10 elevados a potência 2). Entretanto, deseja-se criar um dicionário onde a chave é o próprio número e o valor é o número elevado à potência 2. Abaixo, os dois trechos de código apresentam a solução tradicional, para todos os números e para apenas os números ímpares:
+
+# todos os números elevado à potência 2
+
+dict_todos = {}
+
+for item in range(1, 11):
+
+ dict_todos[item] = item ** 2
+
+print('Todos numeros:', dict_todos)
+
+# apenas números ímpares elevado à potência 2
+
+dict_impares = {}
+
+for item in range(1, 11):
+
+ if item % 2 != 0:
+
+   dict_impares[item] = item ** 2
+
+print('Números ímpares:', dict_impares)
+
+# usando a compreensão de dicionário o código pode ser dessa forma
+
+# todos os números elevado à potência 2
+
+dict_todos = {item: item ** 2 for item in range(1, 11)}
+
+print('Todos numeros:', dict_todos)
+
+# apenas números ímpares elevado à potência 2
+
+dict_impares = {item: item ** 2 for item in range(1, 11) if item % 2 != 0}
+
+print('Números ímpares:', dict_impares) # as compreensões deixam o código mais elegante e pythoninco
+
+# funções anonimas ( funções lambda ) lambda é uma função sem nome por isso que é anônima ela pode ter varios argumentos mais só uma expressão
+
+# Declaração da função
+
+area_quadrado = lambda lado: lado ** 2 # a palavra lado que vem depois de lambda é o argumento e depois a expressão
+
+# Utilização
+
+print(area_quadrado(4)) # essa função é util quando precisamos de uma função específica em curto perido 
+
+# Geralmente utilizamos estas funções em conjunto com outras funções que possuem como argumento outra função, como por exemplo a função map(), que permite que apliquemos uma função em todos os elementos de uma lista, como no exemplo a seguir.
+
+# Função que calcula o triplo de número
+
+triplo = lambda x: x * 3
+
+# Calcula o triplo dos números de uma lista
+
+lista = [4, 5, 9, 7, 0, 1, 8]
+
+print(list(map(triplo, lista)))
+
+# Ou poderíamos fazer de um jeito mais pythonico ainda, em apenas uma linha:
+
+print(list(map(lambda x: x * 3, [4, 5, 9, 7, 0, 1, 8])))
+
+# Atribuição Condicional em Uma Linha, pense em um código que cria uma variavel var, e atribui a ela um valor de acordo com uma das seguintes condições: Se o nome do programador tiver mais de 5 letras, o valor de var deverá ser 100. Caso contrário (o nome tem 5 ou menos letras), o valor de var deverá ser 0.Tal código pode ser escrito da seguinte forma:
+
+nome = 'antonio'
+
+if len(nome) > 5:
+
+ var = 100
+
+else:
+
+ var = 0
+
+print('O valor de var é:', var)
+
+# o python tem um operador ternario que é utlizado para atribuição de um valor a variavel, condicionado a uma verificação de uma expressão
+
+nome = 'antonio'
+
+var = 100 if len(nome) > 5 else 0
+
+print('O valor de var é:', var)

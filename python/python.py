@@ -15,10 +15,10 @@ we = False # 0
 print(ds,we)
 
 # str (tipo não primitivo)
-q = 'str com aspas simples são mais usado para deixa o código legivel e serve para coloca "aspas duplas" dentro\n' # \n essa função faz quebra de linha
+q = 'str com aspas simples são mais usado para deixa o código legivel e serve para coloca "aspas duplas" dentro\n' # a função \n dá quebra de linha
 s = "str com aspas duplas serve para coloca 'aspas simples' dentro"
-z = '''\te existe str com aspas triplas que serve para coloca 'aspas simples' e "aspas duplas" dentro
-da para fazer multi quebras de linhas e multi    espaços''' # a função \t adiciona um espaço horizontal
+z = '''e existe str com aspas triplas que serve para coloca 'aspas simples' e "aspas duplas" dentro
+da para fazer multi quebras de linhas e multi    espaços'''
 print(q, s, z)
 
 # complex (tipo coomplexo)

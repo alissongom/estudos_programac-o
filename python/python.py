@@ -14,7 +14,7 @@ ds = True # 1
 we = False # 0
 print(ds,we)
 
-# str (tipo não primitivo)
+# str
 q = 'str com aspas simples são mais usado para deixa o código legivel e serve para coloca "aspas duplas" dentro\n' # a função \n dá quebra de linha
 s = "str com aspas duplas serve para coloca 'aspas simples' dentro"
 z = '''e existe str com aspas triplas que serve para coloca 'aspas simples' e "aspas duplas" dentro
@@ -426,6 +426,7 @@ print(list)
 # dá para usa operadores de cocatenação (+), repetição (*) e de filiação (in) com as listas. Também podemos utilizar funções e métodos. igual na str
 l1 = [30, 10, 20]
 l2 = [2, 'a', 5.44, True]
+l3 = 'string'
 # Operações de concatenação (+), repetição (*) e filiação (in)
 print(l1 + l2)
 print(l1 * 3)
@@ -448,6 +449,12 @@ l2.pop() # pop: remove o último elemento da lista
 print(l2)
 l2.clear() # clear: limpa a lista, removendo todos os elementos
 print(l2)
+l4 = l2.copy() # copia a lista para outra variavel ( se adicionar algo para a primeira list não vai aparecer aqui )
+print(l4)
+# dá para tranforma qualquer objeto interavel em list os tipos são String, Tuplas, Dicionário, Conjuntos, Sequências numéricas (range, numpy arrays, etc.)
+qw = list(l3)
+print(qw)
+
 # Métodos que retornam valores e não alteram a lista
 print(l1.index(40)) # index: retorna o índice do elemento list
 print(l1.count(10)) # count: conta quantas elementos 10 tem na list

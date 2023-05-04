@@ -394,7 +394,9 @@ while i <= 10:
     print(i)
     i += 1
 
-# existe o comando pass que faz o python ignora a função quando esta vazio
+# existe o comando pass que faz o python ignora a função quando esta vazio que depois são preenchidos
+for x in range(10):
+    pass
 
 
 # Estrutura de dados em python ( tipos não primitivo de dados ) ( as estruturas de dados em Python permitem armazenar e manipular diferentes tipos de dados de forma mais eficiente e conveniente Ao usar essas estruturas de dados, os programadores podem escrever código mais eficiente e legível, facilitando a manipulação dos dados em seus programas. )

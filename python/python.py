@@ -378,7 +378,10 @@ while True: # True faz a repetição nunca parar se não tiver o break no final
     if contador >= 10:
         print("Contador chegou a 10, interrompendo a execução.")
         break
-
+# O continue é uma instrução em Python que é usada dentro de estruturas de repetição, como for e while, para pular uma determinada iteração do loop e passar para a próxima.
+  # 
+  # Por exemplo, suponha que queremos imprimir apenas os números pares de 1 a 10. Podemos usar um for loop para percorrer os números de 1 a 10 e usar o continue para pular a impressão dos números ímpares:
+  # 
 
 # Estrutura de dados em python ( tipos não primitivo de dados ) ( as estruturas de dados em Python permitem armazenar e manipular diferentes tipos de dados de forma mais eficiente e conveniente Ao usar essas estruturas de dados, os programadores podem escrever código mais eficiente e legível, facilitando a manipulação dos dados em seus programas. )
 # Listas [list] Tuplas (tuple) Conjuntos {set} Dicionário {dict}

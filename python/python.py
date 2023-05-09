@@ -131,7 +131,7 @@ qpw = 'consolação'
 print('primeira letra da str: ',qpw[0]) # c
 print('ultima letra da str: ',qpw[9]) # o
 print('pega a letra L da str: ',qpw[5]) # l
-print('pega algumas letras da palavra: ',qpw[0:5:1]) # começa pelo 0 vai até o 5 (não retorna a letra do numero 5) pulando de 1 em 1
+print('pega algumas letras da palavra: ',qpw[0:5:1]) # começa pelo 0 vai até o 4 (não retorna a letra do numero 5) pulando de 1 em 1
 
 # indices negativos
 print('pega a primeira letra da str: ',qpw[-10]) # c
@@ -368,7 +368,8 @@ for num in range(n + 1): # n + 1 é o intervalo
 print(f'A soma dos primeiros {n} inteiros é {soma}')
 # Interrupção da Estruturas de Repetição ( existe o comando break, que encerra a instrução de repetição ao verificar se uma condição específica é verdadeira. if-else )
 for num in range(250, 301):
-    if num % 21 == 0:	      print(f'o divisor de 21 é {num}')
+    if num % 21 == 0:	      
+        print(f'o divisor de 21 é {num}')
       break
 # também é possível fazer com o while
 contador = 0
@@ -394,10 +395,14 @@ while i <= 10:
     print(i)
     i += 1
 
-# existe o comando pass que faz o python ignora a função quando esta vazio que depois são preenchidos
+# existe o comando pass que faz o python ignora a função quando esta vazio que serve para depois ser preenchidos
 for x in range(10):
     pass
 
+# loops aninhados
+for x in range(2): # executa primeiro e só 1 vez (atribui 0 a variável do loop)
+    for y in range(2): # executa segundo e 2 vezes (primeiro atribui 0 e depois atribui 1 pra variável do loop)
+        print(x,y) # retorna na tela o valor dos dois loop 00, 01, 10, 11
 
 # Estrutura de dados em python ( tipos não primitivo de dados ) ( as estruturas de dados em Python permitem armazenar e manipular diferentes tipos de dados de forma mais eficiente e conveniente Ao usar essas estruturas de dados, os programadores podem escrever código mais eficiente e legível, facilitando a manipulação dos dados em seus programas. )
 # Listas [list] Tuplas (tuple) Conjuntos {set} Dicionário {dict}

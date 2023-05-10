@@ -16,7 +16,7 @@ print(ds,we)
 
 # str
 q = 'str com aspas simples são mais usado para deixa o código legivel e serve para coloca "aspas duplas" dentro\n' # a função \n dá quebra de linha
-s = "str com aspas duplas serve para coloca 'aspas simples' dentro"
+s = "\tstr com aspas duplas serve para coloca 'aspas simples' dentro" # a função \t dá uma espaço horizontal
 z = '''e existe str com aspas triplas que serve para coloca 'aspas simples' e "aspas duplas" dentro
 da para fazer multi quebras de linhas e multi    espaços'''
 print(q, s, z)
@@ -403,6 +403,13 @@ for x in range(10):
 for x in range(2): # executa primeiro e só 1 vez (atribui 0 a variável do loop)
     for y in range(2): # executa segundo e 2 vezes (primeiro atribui 0 e depois atribui 1 pra variável do loop)
         print(x,y) # retorna na tela o valor dos dois loop 00, 01, 10, 11
+# outro exemplo
+for i in range(1, 11): # atribui 1 a variável do loop (fileira)
+    for j in range(1, 11): # executa 10 vezes para cada valor de i (coluna)
+        print(i*j, end='\t') # retorna só o valor do cálculo (1x1=1 10 vezes) (2x1=2)
+    print() # o print() vazio serve para dar uma quebra de linha
+# primeiro numero da coluna é 1x1, 1x2, 1,10 depois na segunda coluna numero 2x2, 2x4...
+
 
 # Estrutura de dados em python ( tipos não primitivo de dados ) ( as estruturas de dados em Python permitem armazenar e manipular diferentes tipos de dados de forma mais eficiente e conveniente Ao usar essas estruturas de dados, os programadores podem escrever código mais eficiente e legível, facilitando a manipulação dos dados em seus programas. )
 # Listas [list] Tuplas (tuple) Conjuntos {set} Dicionário {dict}

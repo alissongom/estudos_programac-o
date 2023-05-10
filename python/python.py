@@ -395,7 +395,7 @@ while i <= 10:
     print(i)
     i += 1
 
-# existe o comando pass que faz o python ignora a função quando esta vazio que serve para depois ser preenchidos
+# existe o comando pass que faz o python ignora a função quando esta vazio que serve para depois ser preenchidos (também funciona com o def)
 for x in range(10):
     pass
 
@@ -802,6 +802,27 @@ def exibe_pessoa(nome, idade=30):
 exibe_pessoa('Antônio')
 
 exibe_pessoa('Antônio', 36)
+
+# O parâmetro *args em Python permite que você passe um número variável de argumentos posicionais para uma função
+  # Dentro da função, esses argumentos são tratados como uma tupla, ou seja, uma sequência imutável de valores.
+def exemplo(*args):
+    for arg in args:
+        print(arg)
+exemplo('a', 'b', 'c')
+
+# existe o **kwargs em uma função, ele trata os argumentos nomeados como um dicionário dentro do corpo da função
+def exemplo(**kwargs):
+    for chave, valor in kwargs.items():
+        print(f'{chave}: {valor}')
+exemplo(nome='Alice', idade=25, cidade='São Paulo')
+
+# também é possível utiliza *args com outros parâmetros
+def exemplo(param1, param2, *args):
+    print(f'param1: {param1}')
+    print(f'param2: {param2}')
+    for arg in args:
+        print(arg)
+exemplo('primeiro', 'segundo', 'a', 'b', 'c')
 
 # modulos ( são bibliotecas em python feito por outros devs assim a gente pode reaproveitar esses códigos já prontos para o projetos )
 

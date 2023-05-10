@@ -408,7 +408,7 @@ for i in range(1, 11): # atribui 1 a variável do loop (fileira)
     for j in range(1, 11): # executa 10 vezes para cada valor de i (coluna)
         print(i*j, end='\t') # retorna só o valor do cálculo (1x1=1 10 vezes) (2x1=2)
     print() # o print() vazio serve para dar uma quebra de linha
-# primeiro numero da coluna é 1x1, 1x2, 1,10 depois na segunda coluna numero 2x2, 2x4...
+# primeiro numero da fila é 1x1, 1x2, 1,10 depois na segunda fileira numero 2x2, 2x4...
 
 
 # Estrutura de dados em python ( tipos não primitivo de dados ) ( as estruturas de dados em Python permitem armazenar e manipular diferentes tipos de dados de forma mais eficiente e conveniente Ao usar essas estruturas de dados, os programadores podem escrever código mais eficiente e legível, facilitando a manipulação dos dados em seus programas. )
@@ -1110,9 +1110,6 @@ else:
 print('O valor de var é:', var)
 
 # o python tem um operador ternario que é utlizado para atribuição de um valor a variavel, condicionado a uma verificação de uma expressão
-
 nome = 'antonio'
-
 var = 100 if len(nome) > 5 else 0
-
 print('O valor de var é:', var)

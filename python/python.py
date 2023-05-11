@@ -1,4 +1,12 @@
 # tipos primitivos de dados em python
+# str
+q = 'str com aspas simples são mais usado para deixa o código legivel e serve para coloca "aspas duplas" dentro\n' # a função \n dá quebra de linha
+s = "\tstr com aspas duplas serve para coloca 'aspas simples' dentro" # a função \t dá uma espaço horizontal
+z = '''e existe str com aspas triplas que serve para coloca 'aspas simples' e "aspas duplas" dentro
+
+da para fazer multi quebras de linhas e multi    espaços'''
+print(q, s, z)
+
 # int
 x = 817 # x está atribuido ao valor 817
 v = -x # a variável esta retornando o valor negativo
@@ -13,13 +21,6 @@ print(f,a)
 ds = True # 1
 we = False # 0
 print(ds,we)
-
-# str
-q = 'str com aspas simples são mais usado para deixa o código legivel e serve para coloca "aspas duplas" dentro\n' # a função \n dá quebra de linha
-s = "\tstr com aspas duplas serve para coloca 'aspas simples' dentro" # a função \t dá uma espaço horizontal
-z = '''e existe str com aspas triplas que serve para coloca 'aspas simples' e "aspas duplas" dentro
-da para fazer multi quebras de linhas e multi    espaços'''
-print(q, s, z)
 
 # complex (tipo coomplexo)
 de = 3j

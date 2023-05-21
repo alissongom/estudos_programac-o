@@ -357,6 +357,7 @@ for num in a:
     if num == 'a':
         contador += 1
 print(f'a palavra {a} tem {contador} letras "a"')
+
 # a função range() é usado para cria uma sequencia de números ( ele sempre começa com 0 e o valor de fim não é incluído na sequência resultante )
    # range(stop): cria uma sequência de números que vão de 0 até stop-1. range(12) começa com 0 e vai até o 11
    # range(start, stop): cria uma sequência de números que vão de start até stop-1. range(1, 10) começa no 1 e vai até 9
@@ -367,6 +368,7 @@ soma = 0
 for num in range(n + 1): # n + 1 é o intervalo
  soma = soma + num
 print(f'A soma dos primeiros {n} inteiros é {soma}')
+
 # Interrupção da Estruturas de Repetição ( existe o comando break, que encerra a instrução de repetição ao verificar se uma condição específica é verdadeira. if-else )
 for num in range(250, 301):
     if num % 21 == 0:	      
@@ -380,6 +382,7 @@ while True: # True faz a repetição nunca parar se não tiver o break no final
     if contador >= 10:
         print("Contador chegou a 10, interrompendo a execução.")
         break
+     
 # O continue é uma instrução em Python que é usada dentro de estruturas de repetição, como for e while, para pular uma determinada iteração do loop e passar para a próxima.
   # Quando o continue é encontrado dentro do bloco do loop, o código que vem depois dele é ignorado e a execução passa imediatamente para a próxima iteração do loop. Ou seja, o restante do bloco do loop é ignorado naquela iteração, mas o loop continua executando normalmente nas próximas iterações.
   # Por exemplo, suponha que queremos imprimir apenas os números pares de 1 a 10. Podemos usar um for loop para percorrer os números de 1 a 10 e usar o continue para pular a impressão dos números ímpares:
@@ -591,6 +594,7 @@ print(c2.issubset(c1))
 # Verifica se o conjunto contém outro conjunto (superset)
 print(c1.issuperset(c2))
 print(c2.issuperset(c1))
+
 # exemplo prático com sets ( um programa para gerenciar três turmas de idioma inglês, espanhol e francês )
 # precisamos resolver dois problemas ( 1.cria uma relação com todas os alunos da escola sem repetições ) ( 2.Identificar os alunos que estão matriculados em pelo menos duas ou mais turmas para oferecermos um desconto )
 # Criação dos conjuntos de alunos das turmas ( o tipo sets é a melhor forma porque não retorna os elementos repetidos )
@@ -614,6 +618,8 @@ ALUNOS_DESCONTO = (ING & ESP) | (ING & FRA) | (ESP & FRA)
 # Exibição do resultado
 print('Relação de dos alunos com desconto:')
 print(ALUNOS_DESCONTO)
+
+
 # dict ( o tipo de dado dict é uma coleção de itens (igual aos outros) entretanto cada elemento é um par key/value ( chave - valor ) os pares indicam que cada elemento possui um valor/value atrelado a uma chave/key)
 # o dict é feito por chaves {} e as chaves (key) são unicas e imutaveis
 # Dicionário onde as chaves são do tipo string
@@ -652,6 +658,8 @@ print(d1)
 # Adição da chave 'endereço' junto com o valor 'Rua 123'
 d1['endereço'] = 'Rua 123'
 print(d1)
+
+
 # o dict também tem varios operadores, funções e métodos que operam seus elementos algumas das operações se comporta da mesma forma que os outros elementos e outras possuem diferenças
   # o min() e o max() continua retornando o minimo minimo e o máximo mais funciona só com a chave/key ignorando o seus valor/value
   # Os operadores de filiação in e not in também operam sobre as chaves, e não sobre os valores.
@@ -673,6 +681,7 @@ print(d1)
 # remove o último elemento com chave e o valor
 d1.popitem()
 print(d1)
+
 # também é possível utilizar o loop for in no dict ( e em outras estruturas de dados ) entretanto devemos fica atento ao sobre o que queremos iterar
   # no dict podemos iterar sobre chaves (dict.keys()) sobre os valores (dict.values()) ou sobre os itens (dict.items()) no caso dos pares key:value se não específica, a interação sera sobre as chaves por padrão
 # Cria o dicionário
@@ -771,17 +780,11 @@ def div(dividendo, divisor):
 def div_qr(dividendo, divisor):
     if divisor_invalido(divisor):
         return
-
     quociente = dividendo // divisor
-
     resto = dividendo % divisor
-
     return (quociente, resto)
-
 print('div(10, 4) ==>', div(10, 4)) # dividento=10 e divisor=4
-
 print('div(10, 0) ==>', div(10, 0)) # dividento=10 e divisor=0
-
 print('div_qr(10, 4) ==>', div_qr(10, 4)) # dividento=10 e divisor=4
 
 # argumentos da funções ( é possível passar os valores dos argumentos em uma ordem diferente, mas neste caso precisamos declarar o nome dos argumentos na chamada da função, conforme o exemplo a seguir.)
